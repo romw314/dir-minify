@@ -1,4 +1,4 @@
-const axios = require('axios').default;
+const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
@@ -11,15 +11,11 @@ const endpointHTML = 'https://www.toptal.com/developers/html-minifier/raw';
 var inputDir = '';
 var outputDir = '';
 
-function writeFile(path, content) {
-    let directoryName = path.dirname(path);
-    mkdirp.sync(directoryName, function(err) {
-        if (err) {
-            console.log(err);
-        }
-    });
+function writeFile(filePath, content) {
+    let directoryName = path.dirname(filePath);
+    mkdirp.sync(directoryName);
 
-    fs.writeFile(path, content, function(err) {
+    fs.writeFile(filePath, content, function(err) {
         if (err) {
             console.log(err);
         }
@@ -27,20 +23,22 @@ function writeFile(path, content) {
 }
 
 async function minifyData(data, type) {
+    let formData;
     if (type === 'html') {
-        const response = await axios.post(endpointHTML, {
-            data: new FormData().append('input', data),
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        });
+        formData = new FormData();
+        formData.append('input', data);
+        const response = await fetch(endpointHTML, {
+            method: 'POST',
+            body: formData
+        })
         return await response.text();
     }
-    const response = await axios.post(endpoint, {
-        data: new FormData().append('source', data),
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        }
+    formData = new FormData();
+    formData.append('source', data);
+    formData.append('type', type);
+    const response = await fetch(endpoint, {
+        method: 'POST', 
+        body: formData
     });
     let responseData = await response.json();
     return responseData['minified'];
@@ -104,11 +102,7 @@ function minifyDir(input, output = '') {
     }
     defineIO(input, output);
     if (!fs.existsSync(outputDir)) {
-        mkdirp.sync(outputDir, function(err) {
-            if (err) {
-                console.log(err);
-            }
-        });
+        mkdirp.sync(outputDir);
     }
     const tree = dirTree(input, { normalizePath: true });
     inputDir = inputDir.replace('./', '');
