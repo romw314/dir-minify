@@ -96,7 +96,7 @@ function minifyFile(input, output = '') {
 }
 
 function minifyDir(input, output = '') {
-    if (!existsSync(input)) {
+    if (!fs.existsSync(input)) {
         console.log('Error: Cannot minify a directory that does not exist');
         return;
     }
