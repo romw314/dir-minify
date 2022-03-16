@@ -112,7 +112,7 @@ function minifyDir(input, output = '') {
 
 function minifyDirRecursive(directory) {
     for (let i = 0; i < directory.length; i++) {
-        let path = dir[i];
+        let path = directory[i];
         if (path.children != null && path.children.length != 0) {
             minifyDirRecursive(path.children);
         }
