@@ -15,9 +15,9 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/anon-files/dir-minify.git"
+		"url": "git+https://github.com/romw314/dir-minify.git"
 	},
-	"author": "",
+	"author": "romw314",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/anon-files/dir-minify/issues"
