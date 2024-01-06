@@ -8,7 +8,13 @@ const jsMin = require('terser');
 
 const _fn = () => {};
 const noDebug = {
-	log: _fn,error:_fn,warn:_fn,info:_fn,time:_fn,timeEnd:_fn};
+	log: _fn,
+	error: _fn,
+	warn: _fn,
+	info: _fn,
+	time: _fn,
+	timeEnd: _fn
+};
 
 let inputDir = '';
 let outputDir = '';
@@ -105,7 +111,8 @@ async function minifyDirRecursive(directory) {
 }
 
 function minify(input, output = '', debug = noDebug) {
-	inputDir = input; outputDir = output;
+	inputDir = input;
+	outputDir = output;
 	if (fs.lstatSync(input).isFile()) {
 		return minifyFile(input, output);
 	} else {
