@@ -20,9 +20,9 @@
 	"author": "romw314",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/anon-files/dir-minify/issues"
+		"url": "https://github.com/romw314/dir-minify/issues"
 	},
-	"homepage": "https://github.com/anon-files/dir-minify#readme",
+	"homepage": "https://github.com/romw314/dir-minify#readme",
 	"dependencies": {
 		"csso": "^5.0.5",
 		"directory-tree": "^3.2.2",
