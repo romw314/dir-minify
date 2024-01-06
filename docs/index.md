@@ -15,4 +15,4 @@ D                D          B                B
 DDDDDDDDDDDDDDDDD           BBBBBBBBBBBBBBBBB
 ```
 
-[{<span style={{ border: '1px solid black', 'border-radius': '10px', padding: '20px' }}>Get started</span>}](getting-started)
+[{<span style={{ border: '1px solid black', 'border-radius': '10px', padding: '20px' }}>Get started</span>}](docs/getting-started)
