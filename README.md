@@ -1,6 +1,10 @@
 # dir-minify
 Minifies all HTML, CSS, and JavaScript files in a directory.
 
+This was originally [anon-files/dir-minify](https://github.com/anon-files/dir-minify), but the original is not maintained anymore.
+
+I think that it's a perfect project so I have choosed to continue with it.
+
 ## Installation
 ```
 npm install -g dir-minify
