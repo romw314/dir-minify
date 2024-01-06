@@ -8,7 +8,8 @@
 		"format": "prettier --write package.json src/**/*.js lc/**/*.js .prettierrc",
 		"check-format": "prettier --check package.json src/**/*.js lc/**/*.js .prettierrc",
 		"cli-dev": "node src/cli.js",
-		"last-check": "node lc/ensure-pnpm.js && pnpm check-format"
+		"last-check": "node lc/ensure-pnpm.js && pnpm check-format",
+		"hd": "hyperdocs-cli"
 	},
 	"bin": {
 		"minify": "./src/cli.js"
@@ -32,6 +33,7 @@
 		"terser": "^5.26.0"
 	},
 	"devDependencies": {
+		"hyperdocs-cli": "^0.0.7",
 		"prettier": "^3.1.1"
 	}
 }
