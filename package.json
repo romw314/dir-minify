@@ -1,6 +1,6 @@
 {
 	"name": "downbyte",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Minifies all HTML, CSS, and JavaScript files in a directory",
 	"main": "src/api.js",
 	"scripts": {
