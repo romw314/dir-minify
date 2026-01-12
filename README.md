@@ -6,7 +6,7 @@ This was originally [anon-files/dir-minify](https://github.com/anon-files/dir-mi
 I think that it's a perfect project so I have choosed to continue with it.
 
 ## Contributing
-We accept only PNPM lockfiles in PR's.
+I accept only PNPM lockfiles in PR's.
 
 Run `pnpm format` before making any commit.
 
